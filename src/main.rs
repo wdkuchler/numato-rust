@@ -50,7 +50,7 @@ fn main() -> std::io::Result<()> {
        
     wakeup(porta.clone());
  
-    match command.as_str() {
+    match command.to_owned().to_lowercase() .as_str() {
         "on" => activate(porta.clone()),
         "off" => deactivate(porta.clone()),
         "pulse" => pulse(porta.clone()),
