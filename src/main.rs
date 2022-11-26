@@ -1,8 +1,5 @@
 #![allow(unused)]
 
-use std::borrow::Borrow;
-use std::fmt::Error;
-use std::fs;
 use std::fs::OpenOptions;
 use std::env;
 use std::{thread, time};
@@ -11,7 +8,7 @@ use std::io::{prelude::*, Result};
 fn wakeup(porta: String) -> std::io::Result<()> {
     let fifty_millis = time::Duration::from_millis(50);
 
-    let mut file = OpenOptions::new().write(true).append(true).open(&porta).unwrap();
+    let mut file = OpenOptions::new().create(true).write(true).append(true).open(&porta).unwrap();
 
     println!("let's wake up interface");
     write!(file, "{}", '\r');
