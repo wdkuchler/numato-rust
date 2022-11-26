@@ -6,3 +6,10 @@ edition = "2021"
 # See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
 
 [dependencies]
+
+[profile-release]
+strip = true        # Autimaticaly strip symbols from binary
+opt-level = "z"     # Optimeze for size
+lto = true          # Enabl LTO
+codegen-units = 1   # Use a single codegen for size optimization
+panic = "abort"     # Remove traceback information
