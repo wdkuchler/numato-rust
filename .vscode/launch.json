@@ -1,0 +1,45 @@
+{
+    // Use IntelliSense to learn about possible attributes.
+    // Hover to view descriptions of existing attributes.
+    // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "type": "lldb",
+            "request": "launch",
+            "name": "Debug executable 'numato-rust'",
+            "cargo": {
+                "args": [
+                    "build",
+                    "--bin=numato-rust",
+                    "--package=numato-rust"
+                ],
+                "filter": {
+                    "name": "numato-rust",
+                    "kind": "bin"
+                }
+            },
+            "args": [],
+            "cwd": "${workspaceFolder}"
+        },
+        {
+            "type": "lldb",
+            "request": "launch",
+            "name": "Debug unit tests in executable 'numato-rust'",
+            "cargo": {
+                "args": [
+                    "test",
+                    "--no-run",
+                    "--bin=numato-rust",
+                    "--package=numato-rust"
+                ],
+                "filter": {
+                    "name": "numato-rust",
+                    "kind": "bin"
+                }
+            },
+            "args": ["teste.txt", "pulse"],
+            "cwd": "${workspaceFolder}"
+        }
+    ]
+}
