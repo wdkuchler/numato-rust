@@ -1,3 +1,15 @@
+/*
+============================================================================
+ Name        : numato-rust
+ Author      : Willy Kuchler
+ Version     : 1.0
+ Copyright   : Numato Systems Pvt. Ltd.
+ Product     : Numato Lab 1 Channel USB Powered Relay Module
+ Device      : idVendor=2a19, idProduct=0c05
+ Caveats     : This program was written for training in the Rust language      
+============================================================================
+*/
+
 #![allow(unused)]
 
 use std::fs::OpenOptions;
