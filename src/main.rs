@@ -38,8 +38,6 @@ fn deactivate(fd: &mut File) -> std::io::Result<()> {
 }
 
 fn pulse(fd: &mut File) -> std::io::Result<()> {
-    let thousand_millis = time::Duration::from_millis(1000);
-
     println!("let's pulse relay");
     write!(fd, "relay on 0\r");
     thread::sleep(time::Duration::from_millis(1000));
