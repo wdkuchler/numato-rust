@@ -47,7 +47,9 @@ fn pulse(porta: String) -> std::io::Result<()> {
 fn main() -> std::io::Result<()> {
     let porta = std::env::args().nth(1).expect("no pattern given");
     let command = std::env::args().nth(2).expect("no path given");
-       
+    
+    println!("USB Relay Module Controller - USBPOWRL002");       
+    
     wakeup(porta.clone());
  
     match command.to_owned().to_lowercase() .as_str() {
