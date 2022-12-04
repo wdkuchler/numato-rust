@@ -8,10 +8,14 @@ This device is useful to turn ON and OFF motors, ligths, power supply, etc.
 In Window run no problems but in PURE-Linux you may configure device permissions via UDEV:
 
 Important notes for linux users:
+
+You can run this utility on WSL (Windows Subsystem for Linux) but need to install a few things:
 1. On Linux:
     sudo apt install linux-tools-virtual hwdata
     sudo update-alternatives --install /usr/local/bin/usbip usbip `ls /usr/lib/linux-tools/*/usbip | tail -n1` 20
+
 2. On Windows PowerShell (admin)
+
     winget install usbipd-win
 
     usbipd wsl list
@@ -25,6 +29,7 @@ Important notes for linux users:
     4-4    0763:400d  M-Track Hub
 
     usbipd wsl attach --busid 4-1
+
 3. On Linux:
     sudo chmod 666 /dev/ttyACM0
 
@@ -35,12 +40,3 @@ cargo run device command
 Where:
 device name: Ex.: /dev/ttyACM0 or COM1
 command to process: Ex.: on, off or pulse
-
-Important notes for Linux running into WSL users:
-You can run this utility on WSL (Windows Subsystem for Linux) where device name corresponding:
-
-Windows COM1 => Linux /dev/ttyS1
-Windows COM2 => Linux /dev/ttyS2
-Windows COM3 => Linux /dev/ttyS3, etc.
-
-More this link: https://blogs.msdn.microsoft.com/wsl/2017/04/14/serial-support-on-the-windows-subsystem-for-linux/
