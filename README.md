@@ -14,49 +14,19 @@ In Window run no problems.
 
 **Important notes for linux users:**
 
-You can run this utility on WSL (Windows Subsystem for Linux) but need to install a few things:
+Unfortunately I couldn't run on Windows + WSL2. WSL does not work with any hardware.
 
-1. On Linux terminal:
-
-**sudo apt install linux-tools-virtual hwdata**
-
-**sudo update-alternatives --install /usr/local/bin/usbip usbip `ls /usr/lib/linux-tools/*/usbip | tail -n1` 20**
-
-1. On Windows PowerShell (admin)
-
-**winget install usbipd-win**
-
-**usbipd wsl list**
-
-BUSID VID:PID DEVICE STATE
-
-3-3 0bda:8771 Realtek Bluetooth 5.0 Adapter Not attached
-
-3-6 258a:1006 Dispositivo de Entrada USB Not attached
-
-3-7 138a:0017 Synaptics FP Sensors (WBF) (PID=0017) Not attached
-
-3-12 04f2:b39a Integrated Camera Not attached
-
-4-1 2a19:0c05 Dispositivo Serial USB (COM6) Attached - Ubuntu
-
-4-3 20a0:0001 Dispositivo de Entrada USB, flirc Not attached
-
-4-4 0763:400d M-Track Hub
-
-**usbipd wsl attach --busid 4-1**
-
-On Linux:
+1. On (PURE) Linux, Don't forget to set permission for the device:
 
 **sudo chmod 666 /dev/ttyACM0**
 
-Usage:
+1. Usage:
 
 cargo run [device] [command]
 
 Where:
 
-device name: Ex.: /dev/ttyACM0 or COM6
+device name: Ex.: /dev/COM6 or /dev/ttyACM0
 
 command to process: Ex.: on, off or pulse
 
