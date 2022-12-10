@@ -46,9 +46,9 @@ fn pulse(fd: &mut File) -> std::io::Result<()> {
 }
 
 fn main() -> std::io::Result<()> {
-    let porta = std::env::args().nth(1).expect("no pattern given");
-    let command = std::env::args().nth(2).expect("no path given");
-    let mut fd = OpenOptions::new().create(true).write(true).append(true).open(&porta).unwrap();    
+    let porta: String = std::env::args().nth(1).expect("no pattern given");
+    let command: String = std::env::args().nth(2).expect("no path given");
+    let mut fd: File = OpenOptions::new().create(true).write(true).append(true).open(&porta).unwrap();    
     
     println!("USB Relay Module Controller - USBPOWRL002");       
     
