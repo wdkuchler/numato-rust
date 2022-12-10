@@ -54,7 +54,7 @@ fn main() -> std::io::Result<()> {
     
     wakeup(&mut fd);
  
-    match command.to_owned().to_lowercase() .as_str() {
+    match command.to_owned().to_lowercase().as_str() {
         "on" => activate(&mut fd),
         "off" => deactivate(&mut fd),
         "pulse" => pulse(&mut fd),
