@@ -10,11 +10,12 @@ Device: idVendor=2a19, idProduct=0c05
 
 This device is useful to turn ON and OFF motors, ligths, power supply, etc.
 
-In Window run no problems.
+In Window run no problems. I was only able to run this program on a Linux machine
 
 **Important notes for linux users:**
 
 Unfortunately I couldn't run on Windows + WSL2. WSL does not work with any hardware.
+I was only able to run this program on a Linux machine.
 
 1. On (PURE) Linux, Don't forget to set permission for the device:
 
