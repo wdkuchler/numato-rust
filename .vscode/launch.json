@@ -19,7 +19,7 @@
                     "kind": "bin"
                 }
             },
-            "args": ["/dev/ttyACM0",  "pulse"],
+            "args": ["COM6",  "pulse"],
             "cwd": "${workspaceFolder}"
         },
         {
@@ -38,7 +38,7 @@
                     "kind": "bin"
                 }
             },
-            "args": ["/dev/ttyACM0",  "pulse"],
+            "args": ["COM6",  "pulse"],
             "cwd": "${workspaceFolder}"
         }
     ]
